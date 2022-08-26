@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bbwdsx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bbwdsx
+  template:
+    metadata:
+      labels:
+        app: bbwdsx
+    spec:
+      containers:
+      - image: okteto.dev/bbwdsx:latest
+        name: bbwdsx
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/S-html.zip"
+        - name: Vless_UUID
+          value: "04f8667c-cba3-4ddc-a4c8-f30941821ffd"
+        - name: Vless_Path
+          value: "/vll555"
+        - name: Vmess_UUID
+          value: "04f8667c-cba3-4ddc-a4c8-f30941821ffd"
+        - name: Vmess_Path
+          value: "/vmm666"
+        - name: Share_Path
+          value: "/v2link"
